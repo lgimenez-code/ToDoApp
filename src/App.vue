@@ -5,9 +5,10 @@
         What's up, <input type="text" placeholder="Name here..." v-model="nameUser" />
       </h2>
     </section>
-
+    
     <section class="create-task">
-      <h3>Create a task</h3>
+      <h2>Create a task</h2>
+      <br>
       <form @submit.prevent="addTask">
         <h4>What's on your task list?</h4>
         <input
@@ -17,7 +18,7 @@
         />
         <CategorySelector
           :categories="['Business', 'Personal']"
-          @update:modelValue="inputCategory = $event"
+          v-model="inputCategory"
         />
         <input type="submit" value="Add task" />
       </form>
@@ -38,11 +39,11 @@
 import { ref, onMounted, computed, watch } from "vue";
 import TaskItem from './TaskItem.vue'
 import CategorySelector from './CategorySelector.vue'
-
+// @update:modelValue="inputCategory = $event"
 const arrayTask = ref([]);
-const nameUser = ref("");
+const nameUser = ref('');
 
-const nameTask = ref("");
+const nameTask = ref('');
 const inputCategory = ref(null);
 
 const orderedTasks = computed(() =>
@@ -52,10 +53,10 @@ const orderedTasks = computed(() =>
 );
 
 const addTask = () => {
-  if (nameTask.value.trim() == "" || inputCategory.value == null) {
+  if (nameTask.value.trim() == '' || inputCategory.value == '') {
     return;
   }
-
+  console.log(inputCategory.value);
   arrayTask.value.push({
     name: nameTask.value,
     category: inputCategory.value,
@@ -64,7 +65,7 @@ const addTask = () => {
   });
 
   nameTask.value = '';
-  inputCategory.value = null;
+  inputCategory.value = '';
 };
 
 const removeTask = (task) => {

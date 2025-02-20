@@ -6,7 +6,7 @@
     <div v-for="task in listTasks" :class="`task-item ${task.done && 'done'}`">
       <label>
         <input type="checkbox" v-model="task.done" />
-        <span :class="`bubble ${task.category}`"></span>
+        <span :class="`bubble ${task.category.toLowerCase()}`"></span>
       </label>
       <div class="task-content">
         <span>{{ task.name }}</span>

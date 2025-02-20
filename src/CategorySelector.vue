@@ -24,9 +24,22 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  modelValue: {
+    type: String,
+    default: '',
+  }
 });
 
-const inputCategory = ref(null);
 const emit = defineEmits(["update:modelValue"]);
+
+const inputCategory = ref(props.modelValue);
+
+watch(() => props.modelValue, (newValue) => {
+  inputCategory.value = newValue;
+});
+
+watch(inputCategory, (newValue) => {
+  emit("update:modelValue", newValue);
+});
 </script>
 
