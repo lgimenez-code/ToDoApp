@@ -1,5 +1,7 @@
-# Vue 3 + Vite
+<h2>A Simple To Do App</h2>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Deploy: https://to-do-app-livid-two-55.vercel.app/
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+<img src="https://github.com/user-attachments/assets/894d5bf7-cc8d-475f-920f-a3ac94b5d295" width="540px" />
+
+
