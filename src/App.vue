@@ -39,7 +39,7 @@
 import { ref, onMounted, computed, watch } from "vue";
 import TaskItem from './TaskItem.vue'
 import CategorySelector from './CategorySelector.vue'
-// @update:modelValue="inputCategory = $event"
+
 const arrayTask = ref([]);
 const nameUser = ref('');
 
@@ -63,7 +63,6 @@ const addTask = () => {
     done: false,
     createdAt: Date.now(),
   });
-
   nameTask.value = '';
   inputCategory.value = '';
 };

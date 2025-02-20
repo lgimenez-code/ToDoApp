@@ -42,4 +42,3 @@ watch(inputCategory, (newValue) => {
   emit("update:modelValue", newValue);
 });
 </script>
-
